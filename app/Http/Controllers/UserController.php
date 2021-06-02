@@ -45,7 +45,7 @@ class UserController extends Controller
         if ($user) {
             return response()->json([
                 'message' => 'Usuario creado satisfactoriamente',
-                'data' => UserResource::make($user)
+                'data' => UserResource::make(User::findOrFail($id))
             ]);
         }
 
